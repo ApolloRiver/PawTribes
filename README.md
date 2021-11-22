@@ -65,4 +65,4 @@ This product includes GeoLite2 data created by MaxMind, available from <a href="
 
 Special thanks to the following!
 
-- [MyNanoJinja](https://github.com/BitDesert/MyNanoNinja) - The original one 
+- [My Nano Ninja](https://github.com/BitDesert/MyNanoNinja) - The original one 
