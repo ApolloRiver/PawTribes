@@ -64,6 +64,17 @@ module.exports = function (nanorpc) {
       res.status(403).end();
       return;
     }
+	
+	var checkAnimal = function checker(value) {
+		var animals = ["bear","cat","chicken","dog","elephant","hedgehog","horse","lion","monkey","pig","rabbit","racoon"];
+
+		for (var i = 0; i < animals.length; i++) {
+			if (value.toLowerCase().indexOf(animals[i]) > -1) {
+				return true;
+			}
+		}
+		return false;
+	}
 
     var output = {};
 
@@ -81,6 +92,13 @@ module.exports = function (nanorpc) {
     account.donation = req.body.donation;
     account.closing = req.body.closing;
 
+	if (!checkAnimal(account.alias)) {
+        res.status(400).json({
+			status: 'error',
+			msg: 'Please include the name of pawnimal in your tribe\'s alias.',
+        });
+        return;
+	}
     if (req.body.account_monitorUrl) {
       try {
         var monitor_url = new URL("/api.php", req.body.account_monitorUrl);
