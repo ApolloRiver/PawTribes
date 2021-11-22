@@ -151,7 +151,7 @@ router.get('/verified', cache('5 minutes'), function (req, res) {
     'avoid': false,
   })
     .where('votingweight').gt(0)
-    .where('score').gte(80)
+    /*.where('score').gte(80)*/
     .sort('-score')
     .select('-_id account alias uptime votingweight delegators score')
     .exec(function (err, accounts) {
