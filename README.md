@@ -1,16 +1,16 @@
 <hr />
 <div align="center">
-    <img src="public/static/img/ninja-icon.png" alt="Logo" width='150px' height='auto'/>
+    <img src="public/static/img/tribe.png" alt="Logo" width='150px' height='auto'/>
 </div>
 <hr />
 
-# My Nano Ninja
+# Paw Tribes
 
-The perfect tool for Nano representatives lists and network statistics.
+The perfect tool for Paw tribes lists and network statistics.
 
-## What is Nano?
+## What is Paw?
 
-Nano's goal is to become "a global currency with instantaneous transactions and zero fees over a secure, decentralized network." More information is available over on the official [Nano repository](https://github.com/nanocurrency/raiblocks).
+Paw is a animal themed digital currency. More information is available over on the official [Paw repository](https://github.com/paw-digital/paw-node).
 
 ## Prerequisites
 
@@ -35,14 +35,14 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name mynano.ninja;
+        server_name tribes.paw.digital;
 
-        // location to your MyNanoNinja
+        // location to your PawTribes
         location / {
                 proxy_pass http://127.0.0.1:4000;
         }
 
-        // location to your accept-nano instance
+        // location to your PawAccept instance
         location /payment/ {
                 rewrite ^/payment(/.*)$ $1 break;
                 proxy_pass         http://127.0.0.1:5000;
