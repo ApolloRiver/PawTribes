@@ -35,14 +35,14 @@ server {
         listen 80;
         listen [::]:80;
 
-        server_name mynano.ninja;
+        server_name tribes.paw.digital;
 
-        // location to your MyNanoNinja
+        // location to your PawTribes
         location / {
                 proxy_pass http://127.0.0.1:4000;
         }
 
-        // location to your accept-nano instance
+        // location to your PawAccept instance
         location /payment/ {
                 rewrite ^/payment(/.*)$ $1 break;
                 proxy_pass         http://127.0.0.1:5000;
