@@ -57,6 +57,36 @@ server {
 }
 ```
 
+
+
+## Installation Guide On Ubuntu 20.04
+
+### Installing mongo
+```bash
+# If you have mongo 3.6 already installed and want to keep it you can skip this.
+# Careful purge command may erase more than what is wanted. Not recommended to use on a server that already uses or implements mongo in any way.
+# sudo apt-get purge mongo*
+
+sudo wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+sudo apt update
+sudo apt install mongodb-org
+sudo systemctl start mongod.service
+```
+
+### Create config
+Copy ecosystem.config.sample.js to ecosystem.config.js and update the configuration data
+
+### Install prerequisites and start
+```bash
+npm install
+npm i pm2 -g
+pm2 start ecosystem.config.js
+```
+
+To see logs pm2 ls and pm2 logs 0 ( or whatever else the id is )
+
+
 ## Open Source Licenses
 
 This product includes GeoLite2 data created by MaxMind, available from <a href="http://www.maxmind.com">http://www.maxmind.com</a>.
