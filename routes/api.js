@@ -80,6 +80,7 @@ module.exports = function (nanorpc) {
 
     account.alias = req.body.account_alias;
     account.description = req.body.account_description;
+    account.rewards = req.body.account_rewards;
     account.website = req.body.account_website;
 
     if (!account.server) {

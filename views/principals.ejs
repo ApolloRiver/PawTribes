@@ -142,7 +142,7 @@
             </h5>
           </div>
           <div class="col-auto ml-auto">
-            <span class="h1"><%= variableRound((accounts[i].votingweight / nanorpc.getOnlineStakeTotal()) * 100, 3) %> %</span>
+            <span class="h1"><%= variableRound((accounts[i].votingweight / nanorpc.getTrendedStakeTotal()) * 100, 3) %> %</span>
           </div>
         </div>
       </div>
